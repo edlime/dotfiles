@@ -51,8 +51,7 @@ It uses `alias` and `function` to perform the required tasks.
 Use `..<1 to 4>` to move up the directory hierarchy:
 
 ```console
-admin@macbook-pro ~/Documents/1/2/3/4 > ..2
-admin@macbook-pro ~/Documents/1/2 >
+admin@MacBook-Pro ~ % ..2
 ```
 
 ### Git
@@ -60,24 +59,27 @@ admin@macbook-pro ~/Documents/1/2 >
 Use `launch "<commit message>"` to commit changes directly to local and remote repository:
 
 ```console
-admin@macbook-pro ~/my-repo > launch "Some commit message"
+admin@MacBook-Pro ~ % launch "Some commit message"
 ```
-Use `branch` to show the working branch of all child repositories:
+Use `branch` to show the working branch of all local child repositories:
 
 ```console
-admin@macbook-pro ~/my-project > branch
+# Go to parent directory
+admin@MacBook-Pro ~ % branch
 ```
 
-Use `tow` to pull changes on all child repositories:
+Use `tow` to pull changes on all local child repositories:
 
 ```console
-admin@macbook-pro ~/my-project > tow
+# Go to parent directory
+admin@MacBook-Pro ~ % tow
 ```
 
-Use `status` to check the status of all child repositories:
+Use `status` to check the status of all local child repositories:
 
 ```console
-admin@macbook-pro ~/my-project > status
+# Go to parent directory
+admin@MacBook-Pro ~ % status
 ```
 
 ## Syntax highlighting for `cat` command output
@@ -85,7 +87,7 @@ admin@macbook-pro ~/my-project > status
 Use `ccat <filename>` to impose syntax highlighting on `cat` command output:
 
 ```console
-admin@macbook-pro ~/my-repo > ccat my-config.yml
+admin@MacBook-Pro ~ % ccat my-config.yml
 ```
 
 ## Backup command
@@ -93,7 +95,7 @@ admin@macbook-pro ~/my-repo > ccat my-config.yml
 > [!CAUTION] 
 > This is a one-way (source to target) data backup. Any data that is deleted from source will be deleted on target. dotfiles are ignored.
 
-1. Open `aliases.zsh` and look for `alias backup=...`
+1. Open `aliases.zsh` and look for `alias backup=...`.
 2. Update the source path (`/PATH/TO/SOURCE-VOLUME/`) to the directory or volume that is to be backed up.
 3. Update the target path (`/PATH/TO/TARGET-VOLUME`) to the directory or volume where the backup is to be stored
 4. Save the changes and restart the terminal.
@@ -101,5 +103,20 @@ admin@macbook-pro ~/my-repo > ccat my-config.yml
 ### Usage
 
 ```console
-admin@macbook-pro ~/my-repo > backup
+admin@MacBook-Pro ~ % backup
+```
+## Configure Kubernetes context
+
+1. Open `aliases.zsh` and look for `alias dev01=...`.
+2. Specify the path of target kubeconfig file to be used on `/path/to/.kube/kubeconf`.
+3. Save the changes and restart terminal.
+
+> [!TIP]
+> You can change `dev01` to the word or alias you want.
+
+### Usage
+
+```console
+admin@MacBook-Pro ~ % dev01
+admin@MacBook-Pro ~ % ░▒▓  You are now configured to access dev01 environment. 
 ```
